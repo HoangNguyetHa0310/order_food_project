@@ -1,5 +1,5 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=restaurant_website';
+    $dsn = 'mysql:host=localhost;dbname=order_food_web';
 	$user = 'root';
 	$pass = '123456';
 	$option = array(

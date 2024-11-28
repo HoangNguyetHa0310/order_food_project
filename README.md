@@ -1,38 +1,38 @@
-<h1>RestaurantWebsite | A Simple Restaurant Website using PHP & MYSQL</h1>
-<h2>Online Food Ordering and Table Reservation</h2>
-<hr>
+<h1>Trang web nhà hàng | Trang web nhà hàng  sử dụng PHP & MYSQL</h1>
+<h2>Đặt món ăn trực tuyến và đặt bàn</h2>
+<giờ>
 <div>
-	<h3>Technologies</h3>
+	<h3>Công nghệ</h3>
   	<ul>
 		<li>HTML & CSS</li>
-		<li>Bootstrap</li>
+		<li>Dây khởi động</li>
 		<li>JavaScript & Jquery</li>
 		<li>Ajax</li>
 		<li>PHP & MYSQL</li>
 	</ul>
 </div>
-<hr>
+<giờ>
 <div>
-	<h3>Website DEMO</h3>
+	<h3>DEMO trang web</h3>
   	<ul>
-		<li>https://www.youtube.com/watch?v=K5KtjIR-9ts&ab_channel=IdrissJairi</li>
-		<li>Admin Login Page: http://localhost/restaurant-website-php-mysql/admin/</li>
+		<li>Trang đăng nhập khách hàng: http://localhost/food/index.php</li>
+		<li>Trang đăng nhập quản trị viên: http://localhost/food/admin/index.php</li>
 	</ul>
 	<p>
-		Username: admin
+		Tên người dùng: admin
 		<br>
-		Password: 123456
+		Mật khẩu: 123456
 	</p>
 </div>
-<hr>
+<giờ>
 <div>
-	<h3>Installation</h3>
+	<h3>Cài đặt</h3>
   	<ol>
-		<li>Download the files + database file (.sql)</li>
-		<li>Create new database with the name "restaurant_website" and then Import the SQL file downloaded </li>
-		<li>Check the files connect.php to make sure that everything is working</li>
-		<li>The website is ready to use</li>
-		<li>Feel free to edit the missing parts or the existing parts</li>
+		<li>Tải xuống tệp + tệp cơ sở dữ liệu (.sql)</li>
+		<li>Tạo cơ sở dữ liệu mới với tên "food" rồi nhập tệp SQL đã tải xuống </li>
+		<li>Kiểm tra các tệp connect.php để đảm bảo rằng mọi thứ đều hoạt động</li>
+		<li>Trang web đã sẵn sàng để sử dụng</li>
+		<li>Hãy thoải mái chỉnh sửa những phần còn thiếu hoặc những phần hiện có</li>
 	</ol>
 </div>
-<p>Questions and Clarifications: If you have any questions feel free to contact me: https://www.facebook.com/jairiidriss/</p>
+<p>Câu hỏi và làm rõ: Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với tôi: https://www.facebook.com/profile.php?id=100051796620892</p>

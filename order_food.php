@@ -215,7 +215,7 @@ include "Includes/templates/navbar.php";
         $con->beginTransaction();
         try
         {
-            $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant_website' AND TABLE_NAME = 'clients'");
+            $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'order_food_web' AND TABLE_NAME = 'clients'");
 
             $stmtgetCurrentClientID->execute();
             $client_id = $stmtgetCurrentClientID->fetch();
@@ -224,7 +224,7 @@ include "Includes/templates/navbar.php";
                                 values(?,?,?)");
             $stmtClient->execute(array($client_full_name,$client_phone_number,$client_email));
 
-            $stmtgetCurrentOrderID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'restaurant_website' AND TABLE_NAME = 'placed_orders'");
+            $stmtgetCurrentOrderID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'order_food_web' AND TABLE_NAME = 'placed_orders'");
 
             $stmtgetCurrentOrderID->execute();
             $order_id = $stmtgetCurrentOrderID->fetch();
