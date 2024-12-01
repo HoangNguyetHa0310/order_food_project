@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-$pageTitle = 'Thư viện ảnh'; 
+$pageTitle = 'Đặc trưng nổi bật';
 
 if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['password_restaurant_qRewacvAqzA']))
 {

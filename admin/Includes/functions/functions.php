@@ -6,9 +6,9 @@
 	{
 		global $pageTitle;
 		if(isset($pageTitle))
-			echo $pageTitle." | Vincent Restaurant - Your Restaurant";
+			echo $pageTitle." | Phan Hoang 0310 Restaurant - Your Restaurant";
 		else
-			echo "Vincent Restaurant | Your Restaurant";
+			echo "Phan Hoang 0310 Restaurant | Your Restaurant";
 	}
 
 	/*

@@ -99,7 +99,7 @@ ul.nav>li>a
     vertical-align: middle;
     padding: 0 20px;
     letter-spacing: 0;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 80px;
@@ -112,7 +112,7 @@ ul.nav>li>a
 { 
     background-color: #ffc851; 
     font-family: work sans,sans-serif; 
-    font-size: 12px; 
+    font-size: 16px;
     text-transform: uppercase; 
     color: #fff; 
     padding: 0 30px; 
@@ -148,7 +148,7 @@ ul.nav>li>a:hover
 
 .bttn_style_1
 {
-    font-family: "Work Sans",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: 3px;
     background-color: transparent;
     color: white !important;
@@ -171,7 +171,7 @@ ul.nav>li>a:hover
     
 .bttn_style_2
 {
-    font-family: "Work Sans",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: 3px;
     background-color: #ffc851;
     color: rgb(18, 22, 24);
@@ -252,8 +252,8 @@ ul.nav>li>a:hover
     color: rgb(255, 255, 255);
     white-space: nowrap;
     letter-spacing: 12px;
-    font-weight: 400;f
-    ont-size: 30px;
+    font-weight: 400;
+    font-size: 30px;
 }
 
 .home-section p
@@ -293,7 +293,7 @@ ul.nav>li>a:hover
 .thumbnail 
 {
     display: block;
-    margin-bottom: 20px;
+    margin: 0 12px 20px 0;
     line-height: 1.42857143;
     background-color: #fff;
     -webkit-transition: border .2s ease-in-out;
@@ -312,17 +312,21 @@ ul.nav>li>a:hover
 
 .menu_category_name
 {
-    display: inline-block;
+    display: block;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
     vertical-align: top;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 26px;
-    letter-spacing: 4px;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0 22px;
+    margin: 12px 12px 18px 12px;
     -webkit-transition: all .3s;
     transition: all .3s;
+}
+
+.menu-column {
+    margin: 0 36px;
 }
 
 .tab_category_content
@@ -379,6 +383,11 @@ ul.nav>li>a:hover
     font-size: 14px;
     line-height: 28px;
     margin-top: 14px;
+    display: -webkit-box;      /* Sử dụng box model để tạo nhiều dòng */
+    -webkit-line-clamp: 4;     /* Giới hạn số dòng là 3 */
+    -webkit-box-orient: vertical; /* Thiết lập chiều hướng của box */
+    overflow: hidden;          /* Ẩn phần nội dung vượt quá */
+    text-overflow: ellipsis;
 }
 
 .menu_price
@@ -627,12 +636,28 @@ ul.nav>li>a:hover
 }
 .footer_social li a 
 {
-    font-family: "Work Sans",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: #ddd;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     margin-left: 20px;
 }
+
+.menus_tabs {
+    display: flex;
+}
+
+.menus_tabs_picker {
+    width: 20%;
+    border-right: 2px solid #696161;
+}
+
+.menus_tab {
+    width: 80%;
+}
+
+
+
 
 /*** END FOOTER BOTTOM STYLE ***/

@@ -710,7 +710,7 @@ body
 }
 .footer_social li a 
 {
-    font-family: "Work Sans",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: #ddd;
     font-size: 12px;
     font-weight: 600;

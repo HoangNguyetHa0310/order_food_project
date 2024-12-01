@@ -51,14 +51,14 @@ foreach ($web_settings as $option)
             <div class="col-md-6 home-left-section">
                 <div style="padding: 100px 0px; color: white;">
                     <h1>
-                        VINCENT PIZZA.
+                        Phan Hoang
                     </h1>
                     <h2>
                         LÀM CHO MỌI NGƯỜI HẠNH PHÚC
                     </h2>
                     <hr>
                     <p>
-                        Pizza Ý với cà chua bi và húng quế xanh
+                        Món ngon được đước kết qua hàng nghìn năm văn hiến của dân tộc !
                     </p>
                     <div style="display: flex;">
                         <a href="order_food.php" target="_blank" class="bttn_style_1" style="margin-right: 10px; display: flex;justify-content: center;align-items: center;">
@@ -136,7 +136,11 @@ foreach ($web_settings as $option)
         <h2 style="text-align: center;margin-bottom: 30px">KHÁM PHÁ THỰC ĐƠN CỦA CHÚNG TÔI</h2>
         <div class="menus_tabs">
             <div class="menus_tabs_picker">
-                <ul style="text-align: center;margin-bottom: 70px">
+                <div style="font-size: 20px; margin: 20px 20px 30px 20px; ">
+                    <i class="fa fa-list"></i>
+                    Danh mục
+                </div>
+                <ul style="margin-bottom: 70px">
                     <?php
 
                     $stmt = $con->prepare("Select * from menu_categories");
@@ -185,7 +189,7 @@ foreach ($web_settings as $option)
                     if($i == 0)
                     {
 
-                        echo '<div class="menu_item  tab_category_content" id="'.str_replace(' ', '', $row['category_name']).'" style=display:block>';
+                        echo '<div class="menu_item tab_category_content" id="'.str_replace(' ', '', $row['category_name']).'" style=display:block>';
 
                         $stmt_menus = $con->prepare("Select * from menus where category_id = ?");
                         $stmt_menus->execute(array($row['category_id']));
@@ -298,7 +302,7 @@ foreach ($web_settings as $option)
 
 <section class="image-gallery" id="gallery">
     <div class="container">
-        <h2 style="text-align: center;margin-bottom: 30px">BỘ SƯU TẬP ẢNH</h2>
+        <h2 style="text-align: center;margin-bottom: 30px">ĐẶC TRƯNG NỔI BẬT</h2>
         <?php
         $stmt_image_gallery = $con->prepare("Select * from image_gallery");
         $stmt_image_gallery->execute();
@@ -434,7 +438,7 @@ foreach ($web_settings as $option)
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="footer_widget">
-                    <img src="Design/images/restaurant-logo.png" alt="Logo nhà hàng" style="width: 150px;margin-bottom: 20px;">
+                    <img src="Design/images/logo.png" alt="Logo nhà hàng" style="width: 150px;margin-bottom: 20px;">
                     <p>
                         Nhà hàng của chúng tôi là một trong những nhà hàng tốt nhất, cung cấp các thực đơn và món ăn ngon. Bạn có thể đặt bàn hoặc đặt món ăn.
                     </p>

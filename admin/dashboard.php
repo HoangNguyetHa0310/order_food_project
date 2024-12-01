@@ -4,7 +4,7 @@
 session_start();
 
 //Set page title
-$pageTitle = 'Bảng điều khiển'; //Translated
+$pageTitle = 'Bảng điều khiển';
 
 //PHP INCLUDES
 include 'connect.php';

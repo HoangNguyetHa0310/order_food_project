@@ -13,22 +13,20 @@ include "Includes/templates/navbar.php";
 ?>
 
 <style type="text/css">
-    .table_reservation_section
-    {
+    .table_reservation_section {
         max-width: 850px;
         margin: 50px auto;
         min-height: 500px;
     }
 
-    .check_availability_submit
-    {
+    .check_availability_submit {
         background: #ffc851;
         color: white;
         border-color: #ffc851;
-        font-family: work sans,sans-serif;
+        font-family: work sans, sans-serif;
     }
-    .client_details_tab  .form-control
-    {
+
+    .client_details_tab .form-control {
         background-color: #fff;
         border-radius: 0;
         padding: 25px 10px;
@@ -36,14 +34,13 @@ include "Includes/templates/navbar.php";
         border: 2px solid #eee;
     }
 
-    .client_details_tab  .form-control:focus
-    {
+    .client_details_tab .form-control:focus {
         border-color: #ffc851;
         box-shadow: none;
         outline: none;
     }
-    .text_header
-    {
+
+    .text_header {
         margin-bottom: 5px;
         font-size: 18px;
         font-weight: bold;
@@ -51,12 +48,12 @@ include "Includes/templates/navbar.php";
         margin-top: 22px;
         text-transform: capitalize;
     }
-    .layer
-    {
+
+    .layer {
         height: 100%;
-        background: -moz-linear-gradient(top, rgba(45,45,45,0.4) 0%, rgba(45,45,45,0.9) 100%);
-        background: -webkit-linear-gradient(top, rgba(45,45,45,0.4) 0%, rgba(45,45,45,0.9) 100%);
-        background: linear-gradient(to bottom, rgba(45,45,45,0.4) 0%, rgba(45,45,45,0.9) 100%);
+        background: -moz-linear-gradient(top, rgba(45, 45, 45, 0.4) 0%, rgba(45, 45, 45, 0.9) 100%);
+        background: -webkit-linear-gradient(top, rgba(45, 45, 45, 0.4) 0%, rgba(45, 45, 45, 0.9) 100%);
+        background: linear-gradient(to bottom, rgba(45, 45, 45, 0.4) 0%, rgba(45, 45, 45, 0.9) 100%);
     }
 
 </style>
@@ -71,7 +68,7 @@ include "Includes/templates/navbar.php";
     <div class="layer">
         <div style="text-align: center;padding: 15px;">
             <h1 style="font-size: 120px; color: white;font-family: 'Roboto'; font-weight: 100;
-">Đặt Bàn</h1>  <!-- Translated -->
+">Đặt Bàn</h1>
         </div>
     </div>
 
@@ -82,14 +79,13 @@ include "Includes/templates/navbar.php";
     <div class="container">
         <?php
 
-        if(isset($_POST['submit_table_reservation_form']) && $_SERVER['REQUEST_METHOD'] === 'POST')
-        {
+        if (isset($_POST['submit_table_reservation_form']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             // Selected Date and Time
 
             $selected_date = $_POST['selected_date'];
             $selected_time = $_POST['selected_time'];
 
-            $desired_date = $selected_date." ".$selected_time;
+            $desired_date = $selected_date . " " . $selected_time;
 
             //Nbr of Guests
 
@@ -106,8 +102,7 @@ include "Includes/templates/navbar.php";
             $client_email = test_input($_POST['client_email']);
 
             $con->beginTransaction();
-            try
-            {
+            try {
                 $stmtgetCurrentClientID = $con->prepare("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'order_food_web' AND TABLE_NAME = 'clients'");
 
                 $stmtgetCurrentClientID->execute();
@@ -115,11 +110,11 @@ include "Includes/templates/navbar.php";
 
                 $stmtClient = $con->prepare("insert into clients(client_name,client_phone,client_email) 
                                 values(?,?,?)");
-                $stmtClient->execute(array($client_full_name,$client_phone_number,$client_email));
+                $stmtClient->execute(array($client_full_name, $client_phone_number, $client_email));
 
 
                 $stmt_reservation = $con->prepare("insert into reservations(date_created, client_id, selected_time, nbr_guests, table_id) values(?, ?, ?, ?, ?)");
-                $stmt_reservation->execute(array(Date("Y-m-d H:i"),$client_id[0], $desired_date, $number_of_guests, $table_id));
+                $stmt_reservation->execute(array(Date("Y-m-d H:i"), $client_id[0], $desired_date, $number_of_guests, $table_id));
 
 
                 echo "<div class = 'alert alert-success'>";
@@ -127,9 +122,7 @@ include "Includes/templates/navbar.php";
                 echo "</div>";
 
                 $con->commit();
-            }
-            catch(Exception $e)
-            {
+            } catch (Exception $e) {
                 $con->rollBack();
                 echo "<div class = 'alert alert-danger'>";
                 echo $e->getMessage();
@@ -138,7 +131,6 @@ include "Includes/templates/navbar.php";
         }
 
         ?>
-
 
 
         <div class="text_header">
@@ -151,34 +143,44 @@ include "Includes/templates/navbar.php";
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
                         <label for="reservation_date">Ngày </label>
-                        <input type="date" min="<?php echo (isset($_POST['reservation_date']))?$_POST['reservation_date']:date('Y-m-d',strtotime("+1day"));  ?>"
-                               value = "<?php echo (isset($_POST['reservation_date']))?$_POST['reservation_date']:date('Y-m-d',strtotime("+1day"));  ?>"
+                        <input type="date"
+                               min="<?php echo (isset($_POST['reservation_date'])) ? $_POST['reservation_date'] : date('Y-m-d', strtotime("+1day")); ?>"
+                               value="<?php echo (isset($_POST['reservation_date'])) ? $_POST['reservation_date'] : date('Y-m-d', strtotime("+1day")); ?>"
                                class="form-control" name="reservation_date">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
                         <label for="reservation_time">Giờ </label>
-                        <input type="time" value="<?php echo (isset($_POST['reservation_time']))?$_POST['reservation_time']:date('H:i');  ?>" class="form-control" name="reservation_time">
+                        <input type="time"
+                               value="<?php echo (isset($_POST['reservation_time'])) ? $_POST['reservation_time'] : date('H:i'); ?>"
+                               class="form-control" name="reservation_time">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
                         <label for="number_of_guests">Số người? </label>
                         <select class="form-control" name="number_of_guests">
-                            <option value="1" <?php echo (isset($_POST['number_of_guests']))?"selected":"";  ?>>
+                            <option value="1" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>
                                 Một người
                             </option>
-                            <option value="2" <?php echo (isset($_POST['number_of_guests']))?"selected":"";  ?>>Hai người</option>
-                            <option value="3" <?php echo (isset($_POST['number_of_guests']))?"selected":"";  ?>>Ba người </option>
-                            <option value="4" <?php echo (isset($_POST['number_of_guests']))?"selected":"";  ?>>Bốn người</option>
+                            <option value="2" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Hai
+                                người
+                            </option>
+                            <option value="3" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Ba
+                                người
+                            </option>
+                            <option value="4" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Bốn
+                                người
+                            </option>
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
                         <label class="font-weight-bold" for="check_availability">Kiểm tra ngay</label>
-                        <input type="submit" class="form-control check_availability_submit" name="check_availability_submit" value="Check !">  <!-- Translated and added value -->
+                        <input type="submit" class="form-control check_availability_submit"
+                               name="check_availability_submit" value="Check !">
                     </div>
                 </div>
             </div>
@@ -188,8 +190,7 @@ include "Includes/templates/navbar.php";
 
         <?php
 
-        if(isset($_POST['check_availability_submit']))
-        {
+        if (isset($_POST['check_availability_submit'])) {
             $selected_date = $_POST['reservation_date'];
             $selected_time = $_POST['reservation_time'];
             $number_of_guests = $_POST['number_of_guests'];
@@ -210,16 +211,13 @@ include "Includes/templates/navbar.php";
             $stmt->execute(array($selected_date));
             $rows = $stmt->fetch();
 
-            if($stmt->rowCount() == 0)
-            {
+            if ($stmt->rowCount() == 0) {
                 ?>
                 <div class="error_div">
                     <span class="error_message" style="font-size: 16px">TẤT CẢ CÁC BÀN ĐỀU ĐÃ ĐƯỢC ĐẶT </span>
                 </div>
                 <?php
-            }
-            else
-            {
+            } else {
                 $table_id = $rows['table_id'];
                 ?>
                 <div class="text_header">
@@ -235,7 +233,10 @@ include "Includes/templates/navbar.php";
                     <div class="client_details_tab">
                         <div class="form-group colum-row row">
                             <div class="col-sm-12">
-                                <input type="text" name="client_full_name" id="client_full_name" oninput="document.getElementById('required_fname').style.display = 'none'" onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control" placeholder="Họ và tên">
+                                <input type="text" name="client_full_name" id="client_full_name"
+                                       oninput="document.getElementById('required_fname').style.display = 'none'"
+                                       onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control"
+                                       placeholder="Họ và tên">
                                 <div class="invalid-feedback" id="required_fname">
                                     Tên không hợp lệ!
                                 </div>
@@ -243,13 +244,18 @@ include "Includes/templates/navbar.php";
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6">
-                                <input type="email" name="client_email" id="client_email" oninput="document.getElementById('required_email').style.display = 'none'" class="form-control" placeholder="Email">
+                                <input type="email" name="client_email" id="client_email"
+                                       oninput="document.getElementById('required_email').style.display = 'none'"
+                                       class="form-control" placeholder="Email">
                                 <div class="invalid-feedback" id="required_email">
                                     Email không hợp lệ!
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text"  name="client_phone_number" id="client_phone_number" oninput="document.getElementById('required_phone').style.display = 'none'" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Số điện thoại">
+                                <input type="text" name="client_phone_number" id="client_phone_number"
+                                       oninput="document.getElementById('required_phone').style.display = 'none'"
+                                       class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+                                       placeholder="Số điện thoại">
                                 <div class="invalid-feedback" id="required_phone">
                                     Số điện thoại không hợp lệ!
                                 </div>
@@ -271,20 +277,18 @@ include "Includes/templates/navbar.php";
 </section>
 
 <style type="text/css">
-    .details_card
-    {
+    .details_card {
         display: flex;
         align-items: center;
         margin: 150px 0px;
     }
-    .details_card>span
-    {
+
+    .details_card > span {
         float: left;
         font-size: 60px;
     }
 
-    .details_card>div
-    {
+    .details_card > div {
         float: left;
         font-size: 20px;
         margin-left: 20px;

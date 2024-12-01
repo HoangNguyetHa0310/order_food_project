@@ -12,7 +12,7 @@ if (isset($_GET['logout'])) {
 
     // Hiển thị thông báo đăng xuất thành công
     $_SESSION['message'] = "Đăng xuất thành công!";
-    header('Location: index.php');  // Chuyển hướng về trang chủ
+    header('Location: ../index.php');  // Chuyển hướng về trang chủ
     exit();
 }
 ?>

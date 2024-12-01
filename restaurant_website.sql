@@ -263,12 +263,12 @@ CREATE TABLE `website_settings` (
 -- Dumping data for table `website_settings`
 --
 
-INSERT INTO `website_settings` (`option_id`, `option_name`, `option_value`) VALUES
-(1, 'restaurant_name', 'VINCENT PIZZA'),
-(2, 'restaurant_email', 'vincent.pizza@gmail.com'),
-(3, 'admin_email', 'admin_email@gmail.com'),
-(4, 'restaurant_phonenumber', '088866777555'),
-(5, 'restaurant_address', '1580  Boone Street, Corpus Christi, TX, 78476 - USA');
+INSERT INTO `website_settings` (`option_id`, `option_name`, `option_value`)
+VALUES (1, 'restaurant_name', 'Phan Hoang Restaurant'),
+       (2, 'restaurant_email', 'PhanHoang2712@gmail.com'),
+       (3, 'admin_email', 'admin_email@gmail.com'),
+       (4, 'restaurant_phonenumber', '0123456789'),
+       (5, 'restaurant_address', '12 Đông Thượng - Lạc Thành - Nam Định');
 
 --
 -- Indexes for dumped tables

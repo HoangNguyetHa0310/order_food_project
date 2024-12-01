@@ -2,7 +2,7 @@
 
 <?php
 //Set page title
-$pageTitle = 'Đặt Món'; //Translated
+$pageTitle = 'Đặt Món'; 
 
 include "connect.php";
 include 'Includes/functions/functions.php';
@@ -239,7 +239,7 @@ include "Includes/templates/navbar.php";
             }
 
             echo "<div class = 'alert alert-success'>";
-            echo "Tuyệt vời! Đơn đặt hàng của bạn đã được tạo thành công."; //Translated
+            echo "Tuyệt vời! Đơn đặt hàng của bạn đã được tạo thành công."; 
             echo "</div>";
 
             $con->commit();
@@ -266,12 +266,12 @@ include "Includes/templates/navbar.php";
             <!-- ALERT MESSAGE -->
 
             <div class="alert alert-danger" role="alert" style="display: none">
-                Vui lòng chọn ít nhất một món! //Translated
+                Vui lòng chọn ít nhất một món! 
             </div>
 
             <div class="text_header">
                     <span>
-                        1. Chọn Món Ăn //Translated
+                        1. Chọn Món Ăn 
                     </span>
             </div>
 
@@ -313,7 +313,7 @@ include "Includes/templates/navbar.php";
                             <div class="select_item_bttn">
                                 <div class="btn-group-toggle" data-toggle="buttons">
                                     <label class="menu_label item_label btn btn-secondary">
-                                        <input type="checkbox"  name="selected_menus[]" value="<?php echo $row['menu_id'] ?>" autocomplete="off">Chọn //Translated
+                                        <input type="checkbox"  name="selected_menus[]" value="<?php echo $row['menu_id'] ?>" autocomplete="off">Chọn 
                                     </label>
                                 </div>
                             </div>
@@ -338,16 +338,16 @@ include "Includes/templates/navbar.php";
 
             <div class="text_header">
                     <span>
-                        2. Thông tin khách hàng //Translated
+                        2. Thông tin khách hàng 
                     </span>
             </div>
 
             <div>
                 <div class="form-group colum-row row">
                     <div class="col-sm-12">
-                        <input type="text" name="client_full_name" id="client_full_name" oninput="document.getElementById('required_fname').style.display = 'none'" onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control" placeholder="Họ và tên"> //Translated
+                        <input type="text" name="client_full_name" id="client_full_name" oninput="document.getElementById('required_fname').style.display = 'none'" onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control" placeholder="Họ và tên"> 
                         <div class="invalid-feedback" id="required_fname">
-                            Tên không hợp lệ! //Translated
+                            Tên không hợp lệ! 
                         </div>
                     </div>
                 </div>
@@ -355,19 +355,19 @@ include "Includes/templates/navbar.php";
                     <div class="col-sm-6">
                         <input type="email" name="client_email" id="client_email" oninput="document.getElementById('required_email').style.display = 'none'" class="form-control" placeholder="Email">
                         <div class="invalid-feedback" id="required_email">
-                            Email không hợp lệ! //Translated
+                            Email không hợp lệ! 
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text"  name="client_phone_number" id="client_phone_number" oninput="document.getElementById('required_phone').style.display = 'none'" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Số điện thoại"> //Translated
+                        <input type="text"  name="client_phone_number" id="client_phone_number" oninput="document.getElementById('required_phone').style.display = 'none'" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Số điện thoại"> 
                         <div class="invalid-feedback" id="required_phone">
-                            Số điện thoại không hợp lệ! //Translated
+                            Số điện thoại không hợp lệ! 
                         </div>
                     </div>
                 </div>
                 <div class="form-group colum-row row">
                     <div class="col-sm-12">
-                        <input type="text" name="client_delivery_address" id="client_delivery_address" oninput="document.getElementById('required_delivery_address').style.display = 'none'" class="form-control" placeholder="Địa chỉ giao hàng"> //Translated
+                        <input type="text" name="client_delivery_address" id="client_delivery_address" oninput="document.getElementById('required_delivery_address').style.display = 'none'" class="form-control" placeholder="Địa chỉ giao hàng"> 
                         <div class="invalid-feedback" id="required_delivery_address">
 
                         </div>
@@ -381,8 +381,8 @@ include "Includes/templates/navbar.php";
         <div style="overflow:auto;padding: 30px;">
             <div style="float:right;">
                 <input type="hidden" name="submit_order_food_form">
-                <button type="button" class="next_prev_buttons" style="background-color: #bbbbbb;"  id="prevBtn"  onclick="nextPrev(-1)">Trước đó //Translated</button>
-                <button type="button" id="nextBtn" class="next_prev_buttons" onclick="nextPrev(1)">Tiếp theo //Translated</button>
+                <button type="button" class="next_prev_buttons" style="background-color: #bbbbbb;"  id="prevBtn"  onclick="nextPrev(-1)">Trước đó </button>
+                <button type="button" id="nextBtn" class="next_prev_buttons" onclick="nextPrev(1)">Tiếp theo </button>
             </div>
         </div>
 
@@ -407,9 +407,9 @@ include "Includes/templates/navbar.php";
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="footer_widget">
-                    <img src="Design/images/restaurant-logo.png" alt="Logo nhà hàng" style="width: 150px;margin-bottom: 20px;"> //Translated
+                    <img src="Design/images/logo.png" alt="Logo nhà hàng" style="width: 150px;margin-bottom: 20px;">
                     <p>
-                        Nhà hàng của chúng tôi là một trong những nhà hàng tốt nhất, cung cấp các thực đơn và món ăn ngon. Bạn có thể đặt bàn hoặc đặt món ăn. //Translated
+                        Nhà hàng của chúng tôi là một trong những nhà hàng tốt nhất, cung cấp các thực đơn và món ăn ngon. Bạn có thể đặt bàn hoặc đặt món ăn. 
                     </p>
                     <ul class="widget_social">
                         <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a></li>
@@ -422,7 +422,7 @@ include "Includes/templates/navbar.php";
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer_widget">
-                    <h3>Trụ sở chính //Translated</h3>
+                    <h3>Trụ sở chính </h3>
                     <p>
                         962 Fifth Avenue, 3rd Floor New York, NY10022
                     </p>
@@ -436,7 +436,7 @@ include "Includes/templates/navbar.php";
             <div class="col-lg-3 col-md-6">
                 <div class="footer_widget">
                     <h3>
-                        Giờ mở cửa //Translated
+                        Giờ mở cửa 
                     </h3>
                     <ul class="opening_time">
                         <li>Thứ Hai - Thứ Sáu 11:30 sáng - 2:008 chiều</li>  <!--  Lưu ý: 2:008pm có vẻ sai, cần kiểm tra lại -->
@@ -448,11 +448,11 @@ include "Includes/templates/navbar.php";
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer_widget">
-                    <h3>Đăng ký nội dung của chúng tôi //Translated</h3>
+                    <h3>Đăng ký nội dung của chúng tôi </h3>
                     <div class="subscribe_form">
                         <form action="#" class="subscribe_form" novalidate="true">
-                            <input type="email" name="EMAIL" id="subs-email" class="form_input" placeholder="Địa chỉ Email..."> //Translated
-                            <button type="submit" class="submit">ĐĂNG KÝ //Translated</button>
+                            <input type="email" name="EMAIL" id="subs-email" class="form_input" placeholder="Địa chỉ Email..."> 
+                            <button type="submit" class="submit">ĐĂNG KÝ </button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -506,11 +506,11 @@ include "Includes/templates/navbar.php";
 
         if (n == (x.length - 1))
         {
-            document.getElementById("nextBtn").innerHTML = "Gửi"; //Translated
+            document.getElementById("nextBtn").innerHTML = "Gửi"; 
         }
         else
         {
-            document.getElementById("nextBtn").innerHTML = "Tiếp theo"; //Translated
+            document.getElementById("nextBtn").innerHTML = "Tiếp theo"; 
         }
 
         fixStepIndicator(n)
