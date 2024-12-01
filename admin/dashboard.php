@@ -227,7 +227,7 @@ if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['passw
                             echo "<td>";
                             ?>
                             <button class="btn btn-info btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo "client_".$order['client_id']; ?>" data-placement="top">
-                                <?php echo $order['client_id']; ?>
+                                <?php echo $order['client_name']; ?>
                             </button>
 
                             <!-- Client Modal -->
@@ -580,7 +580,7 @@ if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['passw
 
                                 <!-- Liberate Table BUTTON -->
 
-                                <li class="list-inline-item" data-toggle="tooltip" title="Giải phóng bàn">  
+                                <li class="list-inline-item" data-toggle="tooltip" title="Dóng bàn này">
                                     <button class="btn btn-info btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo $liberate_data; ?>" data-placement="top">
                                         <i class="far fa-check-circle"></i>
                                     </button>
@@ -590,13 +590,13 @@ if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['passw
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Giải phóng bàn</h5>  
+                                                    <h5 class="modal-title">Đóng bàn này</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Giải phóng bàn này?  
+                                                    Bạn có muốn đóng bàn này không ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>  

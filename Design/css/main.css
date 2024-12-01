@@ -119,7 +119,8 @@ ul.nav>li>a
     height: 45px; 
     line-height: 45px; 
     display: block; 
-    margin: 0; 
+    margin: 0;
+    font-weight: 600;
 }
 
 .header-btn .menu-btn:hover 

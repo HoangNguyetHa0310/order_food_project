@@ -160,27 +160,20 @@ include "Includes/templates/navbar.php";
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
                         <label for="number_of_guests">Số người? </label>
-                        <select class="form-control" name="number_of_guests">
-                            <option value="1" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>
-                                Một người
-                            </option>
-                            <option value="2" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Hai
-                                người
-                            </option>
-                            <option value="3" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Ba
-                                người
-                            </option>
-                            <option value="4" <?php echo (isset($_POST['number_of_guests'])) ? "selected" : ""; ?>>Bốn
-                                người
-                            </option>
-                        </select>
+                        <input type="number"
+                               class="form-control"
+                               name="number_of_guests"
+                               id="number_of_guests"
+                               min="1"
+                               placeholder="Nhập số lượng khách"
+                               value="<?php echo isset($_POST['number_of_guests']) ? htmlspecialchars($_POST['number_of_guests']) : ''; ?>" />
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                     <div class="form-group">
-                        <label class="font-weight-bold" for="check_availability">Kiểm tra ngay</label>
+                        <label class="font-weight-bold" for="check_availability">Xác nhận đặt bàn</label>
                         <input type="submit" class="form-control check_availability_submit"
-                               name="check_availability_submit" value="Check !">
+                               name="check_availability_submit" value="Xác Nhận !">
                     </div>
                 </div>
             </div>
@@ -235,7 +228,7 @@ include "Includes/templates/navbar.php";
                             <div class="col-sm-12">
                                 <input type="text" name="client_full_name" id="client_full_name"
                                        oninput="document.getElementById('required_fname').style.display = 'none'"
-                                       onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control"
+                                       class="form-control"
                                        placeholder="Họ và tên">
                                 <div class="invalid-feedback" id="required_fname">
                                     Tên không hợp lệ!
@@ -254,7 +247,7 @@ include "Includes/templates/navbar.php";
                             <div class="col-sm-6">
                                 <input type="text" name="client_phone_number" id="client_phone_number"
                                        oninput="document.getElementById('required_phone').style.display = 'none'"
-                                       class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+                                       class="form-control"
                                        placeholder="Số điện thoại">
                                 <div class="invalid-feedback" id="required_phone">
                                     Số điện thoại không hợp lệ!
